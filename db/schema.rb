@@ -10,11 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20140321144528) do
 
   create_table "users", force: true do |t|
     t.string "name"
     t.string "email"
+=======
+ActiveRecord::Schema.define(version: 20150516234957) do
+
+  create_table "messages", force: true do |t|
+    t.string "title"
+    t.string "author"
+    t.string "content"
+>>>>>>> 3cafc7f1667c783d568a232fd569cc18fa8e9dff
   end
 
 end
