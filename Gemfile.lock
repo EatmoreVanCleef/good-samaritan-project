@@ -16,17 +16,12 @@ GEM
       multi_json (~> 1.3)
       thread_safe (~> 0.1)
       tzinfo (~> 0.3.37)
-    addressable (2.3.8)
     arel (4.0.2)
     atomic (1.1.16)
     backports (3.4.0)
     bond (0.4.3)
     builder (3.1.4)
     coderay (1.1.0)
-    dragonfly (1.0.10)
-      addressable (~> 2.3)
-      multi_json (~> 1.0)
-      rack (>= 1.3.0)
     exifr (1.2.2)
     geocoder (1.2.8)
     haml (4.0.6)
@@ -88,7 +83,6 @@ PLATFORMS
 
 DEPENDENCIES
   activesupport
-  dragonfly (~> 1.0.9)
   exifr (~> 1.2.2)
   geocoder (~> 1.2.8)
   haml
