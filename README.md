@@ -1,7 +1,5 @@
-Sinatra
+Project 17
 =============
-
-Brought to you by Lighthouse Labs
 
 ## Getting Started
 

@@ -1,12 +1,14 @@
 require 'rubygems'
 require 'bundler/setup'
-
 require 'active_support/all'
-
+require 'haml'
+#require 'sinatra-contrib'
+require 'puma'
+require 'haml'
 # Load Sinatra Framework (with AR)
 require 'sinatra'
 require 'sinatra/activerecord'
-require 'sinatra/contrib/all' # Requires cookies, among other things
+#require 'sinatra/contrib/all' # Requires cookies, among other things
 
 require 'pry'
 
