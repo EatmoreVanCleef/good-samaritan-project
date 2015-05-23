@@ -1,10 +1,29 @@
 require 'rubygems'
 require 'sinatra'
 require 'haml'
+require_relative 'email_bot.rb'
 
 get '/' do
   erb :index
 end
+
+
+
+
+# Handle POST-request (Receive and save the uploaded file)
+post "/upload" do 
+  File.open(Dir.pwd + '/public/uploads/' + params['myfile'][:filename], "w") do |f|
+    f.write(params['myfile'][:tempfile].read)
+  end
+  image_path = Dir.glob(Dir.pwd + "/public/uploads/*.jpg").first
+  @image = Image.new(image_path)
+  @mayor = Mayor.where(["city = ?", @image.get_city]).first
+  erb :summary
+  # redirect("/images/#{params['myfile'][:filename]}")
+
+end
+
+
 
 get '/summary' do
   erb :summary
@@ -18,19 +37,29 @@ end
 #   @image = Image.new(image_path)
 #   erb '/images/showfile'.to_sym
 # end
-  
-# Handle POST-request (Receive and save the uploaded file)
-post "/upload" do 
-  File.open(Dir.pwd + '/public/uploads/' + params['myfile'][:filename], "w") do |f|
-    f.write(params['myfile'][:tempfile].read)
-  end
-  image_path = Dir.glob(Dir.pwd + "/public/uploads/*.jpg").first
-  @image = Image.new(image_path)
-  @mayor = Mayor.where(["city = ?", @image.get_city]).first
-  erb :summary
-  # redirect("/images/#{params['myfile'][:filename]}")
+
+
+post '/summary' do
+
+  redirect '/sent'
 
 end
+
+
+get "/sent" do
+
+
+  EmailBot.send_email
+  erb :sent
+
+
+
+
+
+end
+
+
+
 
 
 

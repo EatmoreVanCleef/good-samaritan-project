@@ -14,6 +14,8 @@ gem 'haml'
 gem 'exifr', '~> 1.2.2'
 gem 'geocoder', '~> 1.2.8'
 
+gem 'mail'
+
 group :development, :test do
   gem 'pry'
   gem 'shotgun'
