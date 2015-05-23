@@ -10,6 +10,7 @@ class Image
     if geotagged? 
       find_coords
       find_location
+      get_city
     else
       puts "Image is not geotagged!"
     end
@@ -29,13 +30,12 @@ class Image
     @location = Geocoder.search(query).first
   end
 
-  def print_location
-    if (location) 
-      address = location.address
-      city = location.city
-      country = location.country
-      "#{address}"
-    end
+  def get_city
+    location.city
+  end
+
+  def get_address
+    location.address
   end
 
 end
