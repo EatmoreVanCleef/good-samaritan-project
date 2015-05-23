@@ -2,8 +2,6 @@ require 'rubygems'
 require 'sinatra'
 require 'haml'
 
-
-# Homepage (Root path)
 get '/' do
   erb :index
 end

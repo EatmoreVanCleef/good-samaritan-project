@@ -29,12 +29,12 @@ class Image
     @location = Geocoder.search(query).first
   end
 
-#OPTIMIZE: Doesn't return street address. Might be needed later.
   def print_location
     if (location) 
+      address = location.address
       city = location.city
       country = location.country
-      "#{city}, #{country}"
+      "#{address}"
     end
   end
 
