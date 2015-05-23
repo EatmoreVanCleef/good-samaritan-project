@@ -34,7 +34,7 @@ class Image
     if (location) 
       city = location.city
       country = location.country
-      "... Location: #{city}, #{country}"
+      "#{city}, #{country}"
     end
   end
 

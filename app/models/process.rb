@@ -1,6 +1,0 @@
-class Process
-
-
-
-
-end
