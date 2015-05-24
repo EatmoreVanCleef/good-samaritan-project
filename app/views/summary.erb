@@ -1,3 +1,4 @@
+
 <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12 text-center">
@@ -6,9 +7,9 @@
                 </h2>
                 <h4 class="section-subheading text-muted" align="justify">
                     You have uploaded a photo of a civic concern in <br>
-                    <a href="http://maps.google.com/?q=<%= @image.get_address %>"><%= @image.get_address %></a>.</br>
+                    <a href="http://maps.google.com/?q=<%= @image.get_address %>" target="_blank"><%= @image.get_address %></a>.</br>
                     Select a concern label from the drop down menu and we'll send an email on your behalf to <br>
-                    Mayor <em  id="mayor-name"><%= @mayor.name %></em>!
+                    Mayor <em id="mayor-name"><%= @mayor.name %></em>!
                 </h4>
             </div>
         </div>
@@ -29,8 +30,6 @@
                 <option id="07">Suspicious or Unlawful Behaviour</option>
               </select>
             </div>
-          </form>
-        </div> 
     <br>
     <div class="row">
         <div class="container">
@@ -55,6 +54,7 @@
                     <button type="button" class="btn btn-primary btn-block" data-somestringvalue-text="Message Sent!" autocomplete="on">Send Message</button>
                 </div>
             </div>
+
         </div>
     </div>
 
