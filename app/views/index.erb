@@ -1,13 +1,19 @@
-<div class="container">
-  <div class="jumbotron">
+<% @body_class = "index" %>
 
-    <h1>Tell The Mayor</h1>
-    <img src="/images/Mayor_Yardsign.png">
-    <h4>What will you tell the Mayor?</h4>
-
-    <form id="upload-form" action="/upload" method="post" enctype="multipart/form-data">   
-          <input id="image-upload" type='file' name='myfile'></input>
-    </form>
-
+  <div >
+    <img id="yardsign" class="center-block" src="/images/Mayor_Yardsign.png">
   </div>
+  <h4>What will you tell the Mayor?</h4>
+  </div>
+  
+  <div class="col-md-6 col-md-offset-3">
+    <!-- <div class="fileUpload btn btn-primary btn-block"> -->
+      <form id="upload-form" action="/upload" method="post" enctype="multipart/form-data">  
+        <span>Upload Concern</span>
+        <input id="image-upload" class="upload" type='file' name='myfile'>
+      </input>
+      <input class="btn btn-default" type="submit" value="Submit">
+    </form>
+  <!-- </div> -->
 </div>
+
