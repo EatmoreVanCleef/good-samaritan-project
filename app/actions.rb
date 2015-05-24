@@ -20,14 +20,10 @@ post "/upload" do
   # redirect("/images/#{params['myfile'][:filename]}")
 end
 
-# get '/images/:filename' do
-#   # open the file using the :filename param
-#   # create a variable to send to the showfile.html.erb
-#   # in that file, spit out all meaningful data
-#   image_path = Dir.glob(Dir.pwd + "/public/uploads/*.jpg").first
-#   @image = Image.new(image_path)
-#   erb '/images/showfile'.to_sym
-# end
+get "/sent" do
+  EmailBot.send_email
+  erb :sent
+end
 
 get '/summary' do
   erb :summary
@@ -37,7 +33,12 @@ post '/summary' do
   redirect '/sent'
 end
 
-get "/sent" do
-  EmailBot.send_email
-  erb :sent
-end
+# get '/images/:filename' do
+#   # open the file using the :filename param
+#   # create a variable to send to the showfile.html.erb
+#   # in that file, spit out all meaningful data
+#   image_path = Dir.glob(Dir.pwd + "/public/uploads/*.jpg").first
+#   @image = Image.new(image_path)
+#   erb '/images/showfile'.to_sym
+# end
+
