@@ -1,13 +1,20 @@
 require 'rubygems'
 require 'sinatra'
 require 'haml'
-require_relative 'email_bot.rb'
+
+client = Twitter::REST::Client.new do |config|
+  config.consumer_key = "TW_CONSUMER_KEY"
+  config.consumer_secret = "TW_CONSUMER_SECRET"
+  config.access_token = "TW_ACCESS_TOKEN"
+  config.access_token_secret = "TW_ACCESS_SECRET"
+end
+
 
 get '/' do
   erb :index
 end
   
-# Handle POST-request (Receive and save the uploaded file)
+
 post "/upload" do 
   @filename = params['myfile'][:filename]
   File.open(Dir.pwd + "/public/uploads/#{@filename}", 'w') do |f|
@@ -17,28 +24,16 @@ post "/upload" do
   @image = Image.new(image_path)
   @mayor = Mayor.where(["city = ?", @image.get_city]).first
   erb :summary
-  # redirect("/images/#{params['myfile'][:filename]}")
 end
 
-get "/sent" do
-  EmailBot.send_email
-  erb :sent
-end
 
 get '/summary' do
   erb :summary
 end
 
 post '/summary' do
-  redirect '/sent'
+
+client.update("tweet tweet. TWEEEEET!")
 end
 
-# get '/images/:filename' do
-#   # open the file using the :filename param
-#   # create a variable to send to the showfile.html.erb
-#   # in that file, spit out all meaningful data
-#   image_path = Dir.glob(Dir.pwd + "/public/uploads/*.jpg").first
-#   @image = Image.new(image_path)
-#   erb '/images/showfile'.to_sym
-# end
 

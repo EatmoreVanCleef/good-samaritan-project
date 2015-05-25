@@ -1,17 +1,18 @@
 <% @body_class = "index" %>
 
-  <div >
-    <img id="yardsign" class="center-block" src="/images/Mayor_Yardsign.png">
-  </div>
-  <h4>What will you tell the Mayor?</h4>
-  </div>
+<div >
+  <img id="yardsign" class="center-block" src="/images/Mayor_Yardsign.png">
   
-  <div class="col-md-6 col-md-offset-3">
-    <!-- <div class="fileUpload btn btn-primary btn-block"> -->
+  <h3>What will you tell the Mayor?</h3>
+</div>
+<br>
+<div class="col-md-6 col-md-offset-3">
+  <div class="fileUpload btn btn-primary btn-block">
     <form id="upload-form" action="/upload" method="post" enctype="multipart/form-data">  
-      <!-- <span>Upload Concern</span> -->
-      <input id="image-upload" class="upload" type='file' name='myfile' />
+      <span>Upload Concern
+        <input id="image-upload" class="upload" type='file' name='myfile' />
+      </span>
     </form>
-    <!-- </div> -->
-    </div>
+  </div>
+</div>
 

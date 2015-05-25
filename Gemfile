@@ -16,6 +16,9 @@ gem 'geocoder', '~> 1.2.8'
 
 gem 'mail'
 
+gem 'omniauth-twitter'
+gem 'twitter'
+
 group :development, :test do
   gem 'pry'
   gem 'shotgun'
