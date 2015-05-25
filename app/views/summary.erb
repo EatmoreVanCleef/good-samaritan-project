@@ -12,30 +12,28 @@
                     Mayor <em id="mayor-name"><%= @mayor.name %></em>!
                 </h4>
             </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="container">
-          <form role="form">
-            <div class="col-md-6 col-md-offset-3">
-              <label for="dropdown-concern">How would you categorize your Civic Concern? (select one):</label>
-              <br>
-              <select class="form-control" id="dropdown-concern">
-                <option id="01">Vandalism of Public Property</option>
-                <option id="02">Untidiness or Litter of a Public Space</option>
-                <option id="03">Excessive Loitering</option>
-                <option id="04">Safety Concerns or Public Danger</option>
-                <option id="05">Disturbance of the Peace</option>
-                <option id="06">Unlicensed Vendor</option>
-                <option id="07">Suspicious or Unlawful Behaviour</option>
-              </select>
-            </div>
-    <br>
-    <div class="row">
-        <div class="container">
-            <div class="col-md-6 col-md-offset-3">
-                <input type="email" class="form-control" placeholder="Enter Your email if you would like a copy (optional) *" id="user_email" required data-validation-required-message="Please enter your email address (optional).">
-            </div>
+    <form action="/summary" method="post" id ="form1">
+            <div class="row">
+                <div class="container">
+
+                    <div class="form-group">
+                      <label for="dropdown-concern">How would you categorize your Civic Concern? (select one):</label>
+                      <br>
+                      <select class="form-control" id="dropdown-concern" name="selection">
+                        <option id="01">Vandalism of Public Property</option>
+                        <option id="02">Untidiness or Litter of a Public Space</option>
+                        <option id="03">Excessive Loitering</option>
+                        <option id="04">Safety Concerns or Public Danger</option>
+                        <option id="05">Disturbance of the Peace</option>
+                        <option id="06">Unlicensed Vendor</option>
+                        <option id="07">Suspicious or Unlawful Behaviour</option>
+                    </select>
+                </div>
+  
+        </div> 
+        <br>
+        <div class="form-group">
+            <input type="email" name="email" class="form-control" placeholder="Enter Your email if you would like a copy (optional)" id="email">
         </div>
     </div>
     <br>
@@ -51,11 +49,12 @@
         <div class="container">
             <div class="clearfix">
                 <div class="col-md-6 col-md-offset-3">
-                    <button type="button" class="btn btn-primary btn-block" data-somestringvalue-text="Message Sent!" autocomplete="on">Send Message</button>
+                    <button type="submit" form ="form1" class="btn btn-primary btn-block" data-somestringvalue-text="Message Sent!" autocomplete="on">Send Message</button>
                 </div>
             </div>
-
         </div>
     </div>
+
+    </form>
 
 </div>

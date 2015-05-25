@@ -22,6 +22,9 @@ GEM
     bond (0.4.3)
     builder (3.1.4)
     coderay (1.1.0)
+    dotenv (2.0.1)
+    dotenv-rails (2.0.1)
+      dotenv (= 2.0.1)
     exifr (1.2.2)
     geocoder (1.2.8)
     haml (4.0.6)
@@ -33,6 +36,8 @@ GEM
     mime-types (2.4.3)
     minitest (4.7.5)
     multi_json (1.9.2)
+    pony (1.11)
+      mail (>= 2.0)
     pry (0.9.12.6)
       coderay (~> 1.0)
       method_source (~> 0.8)
@@ -86,10 +91,11 @@ PLATFORMS
 
 DEPENDENCIES
   activesupport
+  dotenv-rails (~> 2.0.1)
   exifr (~> 1.2.2)
   geocoder (~> 1.2.8)
   haml
-  mail
+  pony (~> 1.11)
   pry
   puma
   rake
