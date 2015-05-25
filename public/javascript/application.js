@@ -13,3 +13,18 @@ $(document).ready(function() {
   //   });        
   // });  
 });
+
+function changeText(submitId){
+  var submit = document.getElementById(submitId);
+  submit.value = 'Message sent!';
+  return true;
+};
+
+$('submitbutton').click(function() {
+    var aaa =  $(this);
+    // aaa.css('background-color','#f47121');
+    aaa.prop('disabled', true);
+    setTimeout(function() {
+        aaa.prop('disabled', false);
+    }, 3000);
+});

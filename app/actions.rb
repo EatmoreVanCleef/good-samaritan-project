@@ -58,6 +58,8 @@ post '/summary' do
       }
   )
 
+  redirect '/'
+
 # client.update("tweet tweet. TWEEEEET!")
 
 
