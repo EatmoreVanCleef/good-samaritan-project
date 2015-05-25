@@ -22,6 +22,12 @@ img {
   margin-top: 2.5%;
 }
 
+
+.form-group {
+  width: 450px;
+  margin: auto;
+}
+
 #summary-heading {
       color: #8B0000;
 }
@@ -46,3 +52,4 @@ img {
     opacity: 0;
     filter: alpha(opacity=0);
 }
+
