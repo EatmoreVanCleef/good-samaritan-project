@@ -11,6 +11,13 @@ task "db:create" do
   touch 'db/db.sqlite3'
 end
 
+desc 'Populate database with sample data'
+task "db:populate" do
+  Mayor.destroy_all
+  Mayor.create!(name: "Gregor Robertson", email: "gregor.robertson123456@vancouver.ca", city: "Vancouver", twitter: "@MayorGregor123456")
+  Mayor.create!(name: "Linda Hepner", email: "mayor123456@surrey.ca", city: "Surrey", twitter: "@CityofSurrey123456")
+end
+
 desc "drop the database"
 task "db:drop" do
   rm_f 'db/db.sqlite3'
